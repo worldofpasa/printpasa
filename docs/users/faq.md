@@ -24,15 +24,15 @@ Progress is saved to the database at each step (saved selections, generated reco
 
 ### Do I need a Google account?
 
-When authentication is enabled, yes—PrintPasa uses Google OAuth. For local development, auth can be disabled with `NUXT_DISABLE_AUTH=true`.
+No. PrintPasa supports **email/password** sign-up and sign-in by default. Google OAuth is optional when `NUXT_OAUTH_GOOGLE_*` is configured. For local development, auth can be disabled with `NUXT_DISABLE_AUTH=true`.
 
 ### What is superuser login?
 
-A hidden admin login (Konami code on the login page) for operators who need to see all projects and audit logs. See [Superuser](./superuser.md).
+An admin account (`NUXT_SUPERUSER_USERNAME` / `NUXT_SUPERUSER_PASSWORD`) with cross-workspace visibility and audit log access. See [Superuser](./superuser.md).
 
 ### Can multiple people use one instance?
 
-Yes. Each Google account gets its own user record and project list. Superusers see all projects. Single-tenant self-hosting with one OAuth user is also common.
+Yes. Each account gets its own user record and project list. Superusers see all projects. Self-hosted instances often use email sign-up or a single admin account.
 
 ## Projects and Workflow
 

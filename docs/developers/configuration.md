@@ -25,9 +25,9 @@ Copy `.env.example` to `.env` and fill in values for your deployment.
 | `NUXT_OAUTH_GOOGLE_CLIENT_ID` | For Google login | — | Google OAuth 2.0 client ID. |
 | `NUXT_OAUTH_GOOGLE_CLIENT_SECRET` | For Google login | — | Google OAuth 2.0 client secret. |
 | `NUXT_DISABLE_AUTH` | No | `false` | Set to `true` to bypass login — auto-provisions a local superuser workspace user. **Dev only.** |
-| `NUXT_DISABLE_SIGNUP` | No | `false` | When `true`, blocks creation of new users on first OAuth login. Existing users can still sign in. Use for closed-team deployments. |
+| `NUXT_DISABLE_SIGNUP` | No | `false` | When `true`, blocks new email sign-ups. Existing users can still sign in. |
 | `NUXT_SUPERUSER_USERNAME` | No | `admin` | Username/id for the seeded superuser account. |
-| `NUXT_SUPERUSER_PASSWORD` | No | — | Password for superuser login (Konami code flow). Hashed with bcrypt and stored in `superuser_secrets`. |
+| `NUXT_SUPERUSER_PASSWORD` | No | — | Password for the seeded superuser (stored in `auth_accounts` via Better Auth). |
 | `NUXT_SERVICE_TOKEN` | For automation | — | Shared secret for service-to-service API calls via `x-service-token` header. |
 | `NUXT_SERVICE_PROTECTED_PREFIXES` | No | `''` | Comma-separated URL prefixes that require `x-service-token` even without a user session (e.g. `/api/internal`). |
 

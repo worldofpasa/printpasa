@@ -11,7 +11,7 @@ NUXT_SUPERUSER_USERNAME=admin   # optional, default: admin
 NUXT_SUPERUSER_PASSWORD=your-secret-password
 ```
 
-On startup, PrintPasa seeds (or updates) a superuser account and stores a bcrypt hash of the password in the `superuser_secrets` table. If `NUXT_SUPERUSER_PASSWORD` is not set, superuser login is unavailable.
+On startup, PrintPasa seeds (or updates) a superuser account with a credential in `auth_accounts`. If `NUXT_SUPERUSER_PASSWORD` is not set, superuser login is unavailable.
 
 The superuser user record uses:
 
@@ -23,15 +23,12 @@ Only one superuser role is active; legacy superuser rows are demoted on seed.
 
 ## Logging In as Superuser
 
-Superuser login is separate from Google OAuth.
+Sign in on the **login page** (`/login`) with the superuser email and password:
 
-1. Go to the **login page** (`/login`).
-2. Enter the Konami code on your keyboard:
-   ```
-   ↑ ↑ ↓ ↓ ← → ← →
-   ```
-3. A hidden dialog appears. Enter your superuser password.
-4. On success, you are redirected to the dashboard with an elevated session.
+- **Email:** `{NUXT_SUPERUSER_USERNAME}@printpasa.local` (default `admin@printpasa.local`)
+- **Password:** value of `NUXT_SUPERUSER_PASSWORD`
+
+You can also use Google OAuth if configured, then promote the user to `role=superuser` in the database (not typical for seeded admin).
 
 Failed attempts are recorded in audit logs (`auth.login_failed`).
 

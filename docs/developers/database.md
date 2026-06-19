@@ -31,7 +31,7 @@ Schema definitions live in `server/database/schema/`. All primary keys are `text
 
 | Table | File | Purpose |
 |-------|------|---------|
-| `users` | `users.ts` | Accounts (Google OAuth, superuser) |
+| `users` | `users.ts` | Accounts (Better Auth, `role` column) |
 | `user_settings` | `settings.ts` | Per-user API keys, defaults, provider overrides |
 | `providers` | `providers.ts` | Global provider registry metadata |
 | `projects` | `projects.ts` | Workflow projects |
@@ -50,7 +50,9 @@ Schema definitions live in `server/database/schema/`. All primary keys are `text
 | `pipeline_schedules` | Cron schedule definitions |
 | `workflow_run_events` | Workflow audit trail |
 | `audit_logs` | Auth and admin audit events |
-| `superuser_secrets` | Bcrypt hash for superuser password |
+| `auth_sessions` | Better Auth sessions |
+| `auth_accounts` | Better Auth credentials (email/password, OAuth) |
+| `auth_verifications` | Better Auth verification tokens |
 
 ### Catalog
 
