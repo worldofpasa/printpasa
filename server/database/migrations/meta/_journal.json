@@ -1,0 +1,153 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1771820269443,
+      "tag": "0000_add-slug-unique-index",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1772053500420,
+      "tag": "0001_safe_king_cobra",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1772055419261,
+      "tag": "0002_magenta_stick",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1772069520971,
+      "tag": "0003_sticky_metal_master",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1772086172302,
+      "tag": "0004_add_default_upscale_factor",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1776550556991,
+      "tag": "0005_fresh_lord_hawal",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1776572693288,
+      "tag": "0006_great_senator_kelly",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "6",
+      "when": 1776574345571,
+      "tag": "0007_soft_blacklash",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "6",
+      "when": 1808870400000,
+      "tag": "0008_switch_default_providers_to_photoroom",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "6",
+      "when": 1808923200000,
+      "tag": "0009_switch_upscale_default_to_local",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "6",
+      "when": 1808923300000,
+      "tag": "0010_nifty_epoch",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "6",
+      "when": 1808923400000,
+      "tag": "0011_add_trends_columns",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "6",
+      "when": 1780372620250,
+      "tag": "0012_ambiguous_gambit",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "6",
+      "when": 1780638583846,
+      "tag": "0013_orange_sleeper",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "6",
+      "when": 1780881487227,
+      "tag": "0014_windy_spyke",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "6",
+      "when": 1780882619608,
+      "tag": "0015_lush_jane_foster",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "6",
+      "when": 1781000000000,
+      "tag": "0016_image_prompt_lanes",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "6",
+      "when": 1781050836180,
+      "tag": "0017_exotic_power_pack",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "6",
+      "when": 1781055926926,
+      "tag": "0018_confused_banshee",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "6",
+      "when": 1781494718489,
+      "tag": "0019_cute_korvac",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "6",
+      "when": 1781843022537,
+      "tag": "0020_strange_doctor_spectrum",
+      "breakpoints": true
+    }
+  ]
+}

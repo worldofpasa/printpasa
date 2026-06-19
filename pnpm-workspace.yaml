@@ -1,0 +1,19 @@
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  onnxruntime-node: true
+  protobufjs: true
+  sharp: true
+  vue-demi: true
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - better-sqlite3
+  - esbuild
+  - onnxruntime-node
+  - protobufjs
+  - sharp
+  - vue-demi
+
+overrides:
+  sharp: ^0.34.5

@@ -1,0 +1,22 @@
+services:
+  printpasa:
+    build: .
+    container_name: printpasa
+    ports:
+      - "3001:3000"
+    volumes:
+      # Persist the SQLite database across container restarts
+      - ./data:/app/data
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 3000
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

@@ -1,0 +1,36 @@
+# Example Fly.io configuration — change app name, region, and volume before deploying.
+# See docs/developers/deployment.md
+
+app = 'your-printpasa-app-name'
+primary_region = 'iad'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+  [http_service.concurrency]
+    type = 'requests'
+    hard_limit = 25
+    soft_limit = 20
+
+[[http_service.checks]]
+  grace_period = '90s'
+  interval = '15s'
+  method = 'GET'
+  path = '/api/health'
+  timeout = '10s'
+
+[mounts]
+  source = 'printpasa_data'
+  destination = '/data'
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 2
+  memory_mb = 2048

@@ -1,0 +1,1 @@
+ALTER TABLE `user_settings` ADD `provider_registry_config` text;

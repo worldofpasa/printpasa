@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `mockup_images` text;

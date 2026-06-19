@@ -1,0 +1,1 @@
+ALTER TABLE `generated_images` ADD `selected_variation_id` text;

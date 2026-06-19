@@ -1,0 +1,51 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+.vercel
+.pnpm-store
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.local
+.env.*.local
+.specs/
+
+# Database
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+
+# Generated images
+public/storage/
+data/storage/
+/data
+
+# frameworks
+.playwright-mcp
+
+# llm
+.claude
+.conductor
+
+# Internal / local-only
+tmp/test/
+.vercel/
+.playwright-mcp/
+

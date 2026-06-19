@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 45% 97%;
+    --foreground: 215 30% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 30% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 30% 17%;
+    --primary: 214 34% 19%;
+    --primary-foreground: 43 46% 97%;
+    --secondary: 35 31% 93%;
+    --secondary-foreground: 215 26% 20%;
+    --muted: 35 24% 93%;
+    --muted-foreground: 215 13% 42%;
+    --accent: 33 55% 88%;
+    --accent-foreground: 215 30% 17%;
+    --destructive: 8 67% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 32 20% 84%;
+    --input: 32 20% 84%;
+    --ring: 212 38% 34%;
+    --radius: 1rem;
+    --font-sans: 'Public Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+    --font-serif: 'Fraunces', Georgia, serif;
+    --shadow-panel: 0 26px 60px rgba(35, 45, 61, 0.08);
+    --shadow-soft: 0 14px 32px rgba(35, 45, 61, 0.06);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(196, 140, 66, 0.14), transparent 28%),
+      radial-gradient(circle at top right, rgba(37, 62, 94, 0.08), transparent 24%),
+      linear-gradient(180deg, #fdf9f2 0%, #f8f3ea 52%, #f5efe4 100%);
+  }
+
+  ::selection {
+    background: rgba(196, 140, 66, 0.22);
+    color: #162131;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply rounded-[1.75rem] border border-black/10 backdrop-blur-sm;
+    background-color: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .surface-card-muted {
+    @apply rounded-[1.5rem] border border-black/10;
+    background-color: rgba(255, 255, 255, 0.68);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .eyebrow {
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500;
+  }
+
+  .field-label {
+    @apply text-sm font-semibold text-slate-700;
+  }
+
+  .info-kicker {
+    @apply rounded-full border border-black/10 bg-slate-950/5 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-600;
+  }
+
+  .quiet-grid {
+    background-image:
+      linear-gradient(rgba(34, 43, 56, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 43, 56, 0.035) 1px, transparent 1px);
+    background-position: center;
+    background-size: 30px 30px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

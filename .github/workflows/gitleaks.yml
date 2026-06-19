@@ -1,0 +1,17 @@
+name: Secret scan
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  gitleaks:
+    name: gitleaks (working tree)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run gitleaks
+        run: bash scripts/gitleaks.sh

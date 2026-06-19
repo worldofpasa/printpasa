@@ -1,0 +1,34 @@
+name: Deploy demo to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+        env:
+          NITRO_PRESET: cloudflare_pages
+          NUXT_DEMO_MODE: 'true'
+          NUXT_DISABLE_SIGNUP: 'true'
+          NUXT_SESSION_PASSWORD: ${{ secrets.DEMO_SESSION_PASSWORD }}
+          TURSO_DATABASE_URL: ${{ secrets.DEMO_TURSO_DATABASE_URL }}
+          TURSO_AUTH_TOKEN: ${{ secrets.DEMO_TURSO_AUTH_TOKEN }}
+          NUXT_PUBLIC_APP_URL: https://printpasa-demo.pages.dev
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .output/public --project-name=printpasa-demo

@@ -1,0 +1,43 @@
+title = "PrintPasa gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Paths and patterns that are not secrets"
+paths = [
+  '''(?i)(^|/)\.env$''',
+  '''(?i)(^|/)\.env\.local$''',
+  '''(?i)(^|/)\.env\..*\.local$''',
+  '''(?i)\.env\.example$''',
+  '''(?i)scripts/fixtures/''',
+  '''(?i)\.specs/''',
+  '''(?i)node_modules/''',
+  '''(?i)\.vercel/''',
+  '''(?i)\.output/''',
+  '''(?i)\.nuxt/''',
+  '''(?i)\.nitro/''',
+  '''(?i)\.cache/''',
+  '''(?i)^data/''',
+  '''(?i)\.pnpm-store/''',
+  '''(?i)pnpm-lock\.yaml$''',
+]
+
+regexes = [
+  # Placeholder strings in .env.example and docs
+  '''your-secret-min-32-chars-long-here''',
+  '''\[your-super-long-token\]''',
+  '''\[your-db-name\]-\[your-username\]''',
+  '''\[your-username\]''',
+  # S3 key column/property names (not credential values)
+  '''s3KeyGenerated''',
+  '''s3KeyUpscaled''',
+  '''s3KeyBgRemoved''',
+  '''s3KeyOriginal''',
+  '''s3Key[A-Z][a-zA-Z]+''',
+  '''variation\.s3Key''',
+  '''image\.s3KeyBgRemoved''',
+  '''image\.s3KeyUpscaled''',
+  # Session password placeholder pattern in examples
+  '''NUXT_SESSION_PASSWORD=your-secret''',
+]
