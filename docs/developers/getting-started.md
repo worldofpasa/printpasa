@@ -30,7 +30,7 @@ cd printpasa
 pnpm install
 ```
 
-PrintPasa uses Nuxt 3 with Nitro's `node-server` preset. Native modules (`sharp`, `@libsql/client`, ONNX runtime for local background removal) install automatically on supported platforms.
+PrintPasa uses Nuxt 4 with Nitro's `node-server` preset. Native modules (`sharp`, `@libsql/client`, ONNX runtime for local background removal) install automatically on supported platforms.
 
 ---
 

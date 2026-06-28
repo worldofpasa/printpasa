@@ -11,7 +11,7 @@ pnpm db:push && pnpm dev
 
 ## Stack
 
-Nuxt 3, Drizzle + LibSQL/Turso, Better Auth, Tailwind + shadcn-vue, seven-stage workflow.
+Nuxt 4, Drizzle + LibSQL/Turso, Better Auth, Tailwind + shadcn-vue, seven-stage workflow.
 
 ## Auth
 

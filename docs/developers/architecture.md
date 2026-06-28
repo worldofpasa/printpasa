@@ -1,6 +1,6 @@
 # Architecture
 
-PrintPasa is a **Nuxt 3** full-stack application: Vue 3 frontend, Nitro server API, SQLite/Turso database via Drizzle ORM, and a pluggable provider registry for external services.
+PrintPasa is a **Nuxt 4** full-stack application: Vue 3 frontend, Nitro server API, SQLite/Turso database via Drizzle ORM, and a pluggable provider registry for external services.
 
 ## Stack overview
 
@@ -43,7 +43,7 @@ flowchart TB
 
 | Layer | Technology |
 |-------|------------|
-| Frontend | Nuxt 3 (compat v4), Vue 3, Tailwind CSS, shadcn-vue, Konva (Stage 5 editor) |
+| Frontend | Nuxt 4, Vue 3, Tailwind CSS, shadcn-vue, Konva (Stage 5 editor) |
 | Backend | Nitro, Zod validation, Drizzle ORM |
 | Database | LibSQL client — local `file:` or remote Turso `libsql://` |
 | Auth | Better Auth (email/password + optional Google), Drizzle adapter |

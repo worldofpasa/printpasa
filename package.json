@@ -47,7 +47,7 @@
     "konva": "^10.2.5",
     "lucide-vue-next": "^0.471.0",
     "better-auth": "^1.2.9",
-    "nuxt": "^3.21.2",
+    "nuxt": "^4",
     "openai": "^4.80.0",
     "potrace": "^2.1.8",
     "radix-vue": "^1.9.0",

@@ -9,7 +9,6 @@ const googleOAuthEnabled = Boolean(
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  future: { compatibilityVersion: 4 },
   nitro: {
     preset: process.env.NITRO_PRESET || 'node-server',
     externals: {

@@ -1,6 +1,6 @@
 # Deployment
 
-PrintPasa ships as a **Nuxt 3 Node server** (Nitro `node-server` preset). Choose a target based on whether you need persistent cron, local ML (background removal), and SQLite file storage.
+PrintPasa ships as a **Nuxt 4 Node server** (Nitro `node-server` preset). Choose a target based on whether you need persistent cron, local ML (background removal), and SQLite file storage.
 
 ---
 
