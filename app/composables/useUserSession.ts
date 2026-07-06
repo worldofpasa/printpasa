@@ -34,7 +34,10 @@ export function useUserSession() {
       return bypassUser.value
     }
 
-    const s = session.data.value
+    // Guard against an auth client that hands back an undefined session (seen
+    // with better-auth/vue on some Node versions) so a missing session degrades
+    // to "logged out" instead of throwing during render.
+    const s = session?.data?.value
     if (!s?.user) return null
 
     const u = s.user as {
@@ -75,7 +78,7 @@ export function useUserSession() {
 
   async function clear() {
     await signOut()
-    await session.refetch()
+    await session?.refetch?.()
   }
 
   return {
