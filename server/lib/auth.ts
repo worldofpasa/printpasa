@@ -49,6 +49,7 @@ export function getAuth() {
     emailAndPassword: {
       enabled: true,
       disableSignUp,
+      minPasswordLength: 12,
     },
     ...(Object.keys(socialProviders).length > 0 ? { socialProviders } : {}),
     user: {

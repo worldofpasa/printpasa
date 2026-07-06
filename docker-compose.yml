@@ -32,7 +32,7 @@ services:
   #   NUXT_S3_SECRET_ACCESS_KEY=minioadmin
   #   NUXT_S3_BUCKET=printpasa
   #   NUXT_S3_REGION=us-east-1
-  # Create the bucket once at http://localhost:9001 (console) or via mc.
+  # The minio-init service creates the bucket automatically on first run.
   minio:
     image: minio/minio:latest
     container_name: printpasa-minio
@@ -53,3 +53,21 @@ services:
       timeout: 10s
       retries: 3
       start_period: 20s
+
+  # One-shot: waits for MinIO, then creates the bucket if it doesn't exist.
+  minio-init:
+    image: minio/mc:latest
+    profiles: ["local-storage"]
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
+      BUCKET: ${NUXT_S3_BUCKET:-printpasa}
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 \"$$MINIO_ROOT_USER\" \"$$MINIO_ROOT_PASSWORD\" &&
+      mc mb --ignore-existing local/\"$$BUCKET\" &&
+      echo 'Bucket ready: '\"$$BUCKET\"
+      "
