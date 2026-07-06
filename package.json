@@ -29,7 +29,7 @@
     "@anthropic-ai/sdk": "^0.39.0",
     "@aws-sdk/client-s3": "^3.995.0",
     "@aws-sdk/s3-request-presigner": "^3.995.0",
-    "@google/genai": "^1.0.0",
+    "@google/genai": "^2.10.0",
     "@gradio/client": "^2.0.4",
     "@krea-ai/sdk": "^0.1.2",
     "@libsql/client": "^0.17.0",
