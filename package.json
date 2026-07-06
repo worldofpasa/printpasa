@@ -46,7 +46,7 @@
     "drizzle-orm": "^0.38.0",
     "grammy": "^1.43.0",
     "konva": "^10.2.5",
-    "lucide-vue-next": "^0.471.0",
+    "lucide-vue-next": "^1.0.0",
     "better-auth": "^1.2.9",
     "nuxt": "^4",
     "openai": "^4.80.0",
