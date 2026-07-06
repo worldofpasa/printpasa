@@ -1,0 +1,27 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Typecheck & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        # Run nuxt build directly (the `build` script also runs db:migrate/seed,
+        # which needs a real DB). This verifies the app compiles.
+        run: pnpm exec nuxt build
+        env:
+          TURSO_DATABASE_URL: "file:./data/ci.db"
+          NUXT_SESSION_PASSWORD: "ci-build-session-password-not-a-secret-000"

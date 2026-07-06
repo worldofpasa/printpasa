@@ -22,8 +22,22 @@ We aim to acknowledge reports within 72 hours and will coordinate disclosure tim
 
 PrintPasa is designed for self-hosting. You are responsible for:
 
-- Rotating `NUXT_SESSION_PASSWORD` and provider API keys
-- Restricting network access to admin and database endpoints
-- Keeping dependencies updated
+- Setting a strong random `NUXT_SESSION_PASSWORD` (≥32 chars; the app refuses to
+  start in production without it). Generate with `openssl rand -base64 32`.
+- Rotating provider API keys and the Telegram bot token if ever exposed.
+- Restricting network access to admin and database endpoints.
+- Keeping dependencies updated.
+
+### Internet-exposed instances
+
+If your instance is reachable from the internet:
+
+- **Set `NUXT_DISABLE_SIGNUP=true`** unless you intend open registration. New users
+  fall back to the operator's provider API keys, so open signup means **strangers can
+  spend your AI credits and publish to your Printify shop**.
+- Set `NUXT_TELEGRAM_WEBHOOK_SECRET` if you enable the Telegram bot (the webhook
+  refuses to run without it).
+- Serve over HTTPS and ensure `NUXT_PUBLIC_APP_URL` matches your public origin
+  (required for Better Auth cookies and OAuth callbacks).
 
 Run `pnpm secrets:scan` locally before publishing forks or custom deployments.

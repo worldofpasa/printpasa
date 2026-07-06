@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/worldofpasa/printpasa/security/advisories/new
+    about: Report security issues privately, not as public issues. See SECURITY.md.
+  - name: Questions & discussion
+    url: https://github.com/worldofpasa/printpasa/discussions
+    about: Ask setup/self-hosting questions in Discussions.

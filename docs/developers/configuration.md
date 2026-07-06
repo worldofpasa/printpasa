@@ -122,17 +122,15 @@ Per-user keys can override env defaults in **Settings → Providers**.
 | `NUXT_BRIA_API_KEY` | Bria |
 | `NUXT_LEONARDO_API_KEY` | Leonardo |
 
-Non-NUXT variables (read directly from `process.env`):
+Background-removal and upscale configuration (all `NUXT_`-prefixed, resolved via runtimeConfig):
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `BACKGROUND_REMOVAL_PROVIDER` | `local-bg` | Provider id: `local-bg`, `photoroom`, `leonardo`, `bria` |
-| `PHOTOROOM_API_KEY` | — | Alternative env name for Photoroom (supports `sandbox_` prefix) |
-| `PHOTOROOM_SEGMENT_URL` | — | Override Photoroom segment API URL |
-
-| Variable | Default |
-|----------|---------|
-| `NUXT_DEFAULT_BACKGROUND_REMOVAL_PROVIDER` | `local-bg` |
+| `NUXT_DEFAULT_BACKGROUND_REMOVAL_PROVIDER` | `local-bg` | Provider id: `local-bg`, `photoroom`, `leonardo`, `bria` |
+| `NUXT_PHOTOROOM_API_KEY` | — | Photoroom API key (supports `sandbox_` prefix) |
+| `NUXT_BRIA_API_KEY` | — | Bria background-removal API key |
+| `NUXT_DEFAULT_UPSCALE_PROVIDER` | `local` | Provider id: `local`, `photoroom`, `topaz`, `leonardo` |
+| `NUXT_TOPAZ_API_KEY` | — | Topaz Gigapixel API key |
 
 ---
 

@@ -1,0 +1,38 @@
+name: Feature Request
+description: Suggest an enhancement for PrintPasa
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the use case or pain point.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Workflow / pipeline stages
+        - AI / image provider
+        - Fulfillment (Printify / Printful)
+        - Storage / database
+        - Auth
+        - Telegram bot
+        - Docs / self-hosting
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

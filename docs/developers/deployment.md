@@ -135,7 +135,7 @@ NUXT_S3_BUCKET=...
 ### 4. Limitations on Vercel
 
 - **Cron scheduler** does not run reliably — use an external cron (GitHub Actions, cron-job.org) to hit `/api/internal/pipeline/process` with `x-service-token`.
-- **Local background removal** may exceed function memory/timeout — prefer `photoroom` or `BACKGROUND_REMOVAL_PROVIDER=photoroom`.
+- **Local background removal** may exceed function memory/timeout — prefer `photoroom` (set `NUXT_DEFAULT_BACKGROUND_REMOVAL_PROVIDER=photoroom`).
 - **Cold starts** add latency to first request after idle.
 
 ---

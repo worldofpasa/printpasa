@@ -19,7 +19,7 @@ Solutions for common PrintPasa errors: missing API keys, S3/CORS issues, and fai
    |------------|-------------------|
    | AI text | `NUXT_GEMINI_API_KEY`, `NUXT_OPENAI_API_KEY`, `NUXT_ANTHROPIC_API_KEY` |
    | Image gen | `NUXT_KREA_API_KEY`, `NUXT_FAL_API_KEY` |
-   | Background removal | `PHOTOROOM_API_KEY`, `BACKGROUND_REMOVAL_PROVIDER` |
+   | Background removal | `NUXT_PHOTOROOM_API_KEY`, `NUXT_DEFAULT_BACKGROUND_REMOVAL_PROVIDER` |
    | Fulfillment | `NUXT_PRINTIFY_API_KEY` |
    | Search (Stage 1) | `NUXT_SERPER_API_KEY`, `NUXT_SEARCHAPI_API_KEY`, `NUXT_SERPAPI_API_KEY` |
    | S3 storage | `NUXT_S3_ACCESS_KEY_ID`, `NUXT_S3_SECRET_ACCESS_KEY`, `NUXT_S3_BUCKET`, `NUXT_S3_REGION` |

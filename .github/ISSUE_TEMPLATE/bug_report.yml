@@ -1,0 +1,62 @@
+name: Bug Report
+description: Report a problem with PrintPasa
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. **Never include API keys, session passwords, or any secrets** in this report.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Run stage '...'
+        3. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Which pipeline stage?
+      options:
+        - Not applicable
+        - "1 - Gather idea"
+        - "2 - Validate"
+        - "3 - Prompts"
+        - "4 - Generate"
+        - "5 - Optimize"
+        - "6 - Placement"
+        - "7 - Review / Publish"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: Output of `git rev-parse --short HEAD` or the release tag.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: "Deployment (local / Docker / Fly / Vercel), OS, AI/image providers in use, storage backend (AWS S3 / R2 / MinIO)."
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: "Server logs around the error. Redact all secrets and presigned URLs."
+      render: shell
+    validations:
+      required: false

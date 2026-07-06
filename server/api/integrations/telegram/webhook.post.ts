@@ -14,11 +14,14 @@ interface TelegramUpdate {
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const expectedSecret = (config.telegramWebhookSecret as string)?.trim()
-  if (expectedSecret) {
-    const provided = getHeader(event, 'x-telegram-bot-api-secret-token')
-    if (provided !== expectedSecret) {
-      throw createError({ statusCode: 401, statusMessage: 'Invalid webhook secret' })
-    }
+  // Refuse to process updates without a configured secret — an unauthenticated
+  // webhook lets anyone inject pipeline commands. Set NUXT_TELEGRAM_WEBHOOK_SECRET.
+  if (!expectedSecret) {
+    throw createError({ statusCode: 503, statusMessage: 'Telegram webhook secret not configured' })
+  }
+  const provided = getHeader(event, 'x-telegram-bot-api-secret-token')
+  if (provided !== expectedSecret) {
+    throw createError({ statusCode: 401, statusMessage: 'Invalid webhook secret' })
   }
 
   const update = await readBody<TelegramUpdate>(event)

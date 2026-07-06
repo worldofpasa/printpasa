@@ -72,7 +72,7 @@ The 6-stage pipeline is the core domain (see AGENTS.md > The 6-Stage Workflow). 
 Stages 3 and 4 DELETE previous outputs before regenerating. If you're modifying these endpoints, understand that regeneration is lossy. See AGENTS.md > Destructive Regeneration for details.
 
 ### Image Storage
-Generated images are uploaded to AWS S3 (`printpasa` bucket in `us-east-2`) at generation time via `server/services/storage/s3.ts` and served via short-lived presigned GET URLs. Legacy rows whose `s3KeyGenerated` is null can be migrated via `POST /api/workflow/[projectId]/images/backfill-s3`. The bucket needs CORS configured (`AllowedMethods: ["GET","HEAD"]`, your dev + prod origins) so `<img crossOrigin="anonymous">` loads work in the Stage 5 editor — see `.specs/production-hotfix-2026-04-19/implement.md` § 1b for the policy JSON. The client also supports `NUXT_S3_ENDPOINT` for S3-compatible alternatives (R2, MinIO) if you migrate off AWS later.
+Generated images are uploaded to an S3-compatible store (configured via `NUXT_S3_*`) at generation time via `server/services/storage/s3.ts` and served via short-lived presigned GET URLs. Legacy rows whose `s3KeyGenerated` is null can be migrated via `POST /api/workflow/[projectId]/images/backfill-s3`. The bucket needs CORS configured (`AllowedMethods: ["GET","HEAD"]`, your dev + prod origins) so `<img crossOrigin="anonymous">` loads work in the Stage 5 editor — see [`docs/developers/storage.md`](docs/developers/storage.md) for the CORS policy JSON. `NUXT_S3_ENDPOINT` supports S3-compatible alternatives (Cloudflare R2, or the bundled MinIO `local-storage` compose profile) for fully self-hosted deployments.
 
 ## Commands
 

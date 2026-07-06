@@ -3,7 +3,7 @@ import { useDB, schema } from '~~/server/database'
 import { getActiveHolidays } from '~~/server/services/pipeline/holidays'
 import { runAutomatedResearch } from '~~/server/services/pipeline/brainstorm'
 
-const CRON_TZ = process.env.CRON_TIMEZONE || 'America/Chicago'
+const CRON_TZ = process.env.CRON_TIMEZONE || 'UTC'
 
 function getHourInTz(date: Date, tz: string): number {
   return Number(new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', hour12: false }).format(date))
@@ -13,7 +13,7 @@ function getMinuteInTz(date: Date, tz: string): number {
   return Number(new Intl.DateTimeFormat('en-US', { timeZone: tz, minute: 'numeric' }).format(date))
 }
 
-/** Next occurrence of `hour`:00 in CRON_TZ (default America/Chicago). */
+/** Next occurrence of `hour`:00 in CRON_TZ (default UTC). */
 function getNextDailyAt(hour: number, tz = CRON_TZ): Date {
   const now = new Date()
   for (let ms = 60_000; ms <= 3 * 24 * 60 * 60_000; ms += 60_000) {
