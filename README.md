@@ -8,9 +8,9 @@ Part of [World of Pasa](https://github.com/worldofpasa).
 
 ## Demo
 
-<video src="https://raw.githubusercontent.com/worldofpasa/printpasa/main/docs/screenshots/demo.mp4" controls muted loop playsinline width="820"></video>
+<a href="docs/screenshots/demo.mp4"><img src="docs/screenshots/demo.gif" alt="PrintPasa product tour" width="820"></a>
 
-<p align="center"><sub>A quick tour — the production board, the seven-stage pipeline, and provider-agnostic settings. (Video not playing? See the <a href="docs/screenshots/demo.gif">GIF</a>.)</sub></p>
+<p align="center"><sub>A quick tour — the production board, the seven-stage pipeline, and provider-agnostic settings. Click the GIF for the full-quality <a href="docs/screenshots/demo.mp4">video</a>.</sub></p>
 
 ## Screenshots
 
