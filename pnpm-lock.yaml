@@ -81,8 +81,8 @@ importers:
         specifier: ^4
         version: 4.4.8(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7))(@libsql/client@0.17.0)(@parcel/watcher@2.5.6)(@types/node@25.3.0)(@vue/compiler-sfc@3.5.38)(cac@6.7.14)(db0@0.3.4(@libsql/client@0.17.0)(drizzle-orm@0.38.4(@libsql/client@0.17.0)(kysely@0.29.2)))(drizzle-orm@0.38.4(@libsql/client@0.17.0)(kysely@0.29.2))(ioredis@5.11.1)(magicast@0.5.3)(rollup-plugin-visualizer@7.0.1(rollup@4.62.0))(rollup@4.62.0)(terser@5.48.0)(typescript@5.9.3)(vite@7.3.5(@types/node@25.3.0)(jiti@2.7.0)(terser@5.48.0)(yaml@2.9.0))(yaml@2.9.0)
       openai:
-        specifier: ^4.80.0
-        version: 4.104.0(ws@8.19.0)(zod@3.25.76)
+        specifier: ^6.45.0
+        version: 6.45.0(@aws-sdk/credential-provider-node@3.972.10)(ws@8.19.0)(zod@3.25.76)
       potrace:
         specifier: ^2.1.8
         version: 2.1.8
@@ -5484,13 +5484,21 @@ packages:
     resolution: {integrity: sha512-MVHddDVweXZF3awtlAS+6pgKLlm/JgxZ90+/NBurBoQctVOOB/zDdVjcyPzQ+0laDGbsWgrRkflI65sQeOgT9Q==}
     engines: {node: '>=8'}
 
-  openai@4.104.0:
-    resolution: {integrity: sha512-p99EFNsA/yX6UhVO93f5kJsDRLAg+CTA2RBqdHK4RtK8u5IJw32Hyb2dTGKbnnFmnuoBv5r7Z2CURI9sGZpSuA==}
-    hasBin: true
+  openai@6.45.0:
+    resolution: {integrity: sha512-5DQVNErssk0afNpTTHUm/qZPU4iKR9OYdNid8Ib4puq4gHNNvGWZht2zY4h9a8JMF949Ik6m8gQutllVPbjdnw==}
     peerDependencies:
+      '@aws-sdk/credential-provider-node': '>=3.972.0 <4'
+      '@smithy/hash-node': '>=4.3.0 <5'
+      '@smithy/signature-v4': '>=5.4.0 <6'
       ws: ^8.18.0
-      zod: ^3.23.8
+      zod: ^3.25 || ^4.0
     peerDependenciesMeta:
+      '@aws-sdk/credential-provider-node':
+        optional: true
+      '@smithy/hash-node':
+        optional: true
+      '@smithy/signature-v4':
+        optional: true
       ws:
         optional: true
       zod:
@@ -12681,20 +12689,11 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@4.104.0(ws@8.19.0)(zod@3.25.76):
-    dependencies:
-      '@types/node': 18.19.130
-      '@types/node-fetch': 2.6.13
-      abort-controller: 3.0.0
-      agentkeepalive: 4.6.0
-      form-data-encoder: 1.7.2
-      formdata-node: 4.4.1
-      node-fetch: 2.7.0
+  openai@6.45.0(@aws-sdk/credential-provider-node@3.972.10)(ws@8.19.0)(zod@3.25.76):
     optionalDependencies:
+      '@aws-sdk/credential-provider-node': 3.972.10
       ws: 8.19.0
       zod: 3.25.76
-    transitivePeerDependencies:
-      - encoding
 
   oxc-minify@0.133.0:
     optionalDependencies:
