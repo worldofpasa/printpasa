@@ -42,6 +42,22 @@ cp .env.example .env
 docker compose up --build
 ```
 
+## Deploying to production
+
+Local development (`pnpm dev`) works with no extra config. When you deploy
+(`NODE_ENV=production`), a few settings become **required** — the app will refuse
+to boot without them, by design:
+
+- **`NUXT_SESSION_PASSWORD`** — a random string of at least 32 characters
+  (`openssl rand -base64 32`). Missing/short = the app won't start in production.
+- **`NUXT_PUBLIC_APP_URL`** — your public origin, e.g. `https://shirts.example.com`
+  (required for auth cookies and OAuth callbacks; serve over HTTPS).
+- **`NUXT_DISABLE_SIGNUP=true`** — recommended for internet-exposed instances, or
+  strangers can register and spend your provider API keys.
+- **`NUXT_TELEGRAM_WEBHOOK_SECRET`** — required only if you enable the Telegram bot.
+
+None of this applies to local development.
+
 ## Minimum viable setup
 
 With **one AI provider key** + `local-bg` + `local` upscale you can run stages 1–5. Fulfillment (Printify) is optional for stages 6–7.
