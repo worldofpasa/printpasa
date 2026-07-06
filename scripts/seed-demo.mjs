@@ -41,9 +41,10 @@ async function main() {
   ])
 
   const promptId = randomUUID()
-  await run(`INSERT INTO image_prompts (id, theme_id, prompt_text, style, background_color, is_selected, created_at)
-    VALUES (?, ?, ?, 'flat vector', '#00000000', 1, ?)`, [
-    promptId, themeId, 'Minimal retro sunset palm tree silhouette, vibrant orange and pink gradient', now,
+  const promptText = 'Minimal retro sunset palm tree silhouette, vibrant orange and pink gradient'
+  await run(`INSERT INTO image_prompts (id, theme_id, prompt_text, original_prompt_text, style, background_color_hex, background_color_name, status, is_selected, created_at)
+    VALUES (?, ?, ?, ?, 'flat vector', '#00000000', 'transparent', 'selected', 1, ?)`, [
+    promptId, themeId, promptText, promptText, now,
   ])
 
   const imageId = randomUUID()
