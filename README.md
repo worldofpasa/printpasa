@@ -6,6 +6,12 @@ Self-hosted AI t-shirt design pipeline — seven stages from trend research to P
 
 Part of [World of Pasa](https://github.com/worldofpasa).
 
+## Demo
+
+![PrintPasa product tour](docs/screenshots/demo.gif)
+
+<p align="center"><sub>A quick tour — the production board, the seven-stage pipeline, and provider-agnostic settings. (<a href="docs/screenshots/demo.mp4">Watch the MP4</a>.)</sub></p>
+
 ## Screenshots
 
 ![Seven-stage pipeline](docs/screenshots/pipeline.png)
