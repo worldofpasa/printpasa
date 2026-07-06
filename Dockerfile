@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM node:22-slim AS builder
+FROM node:26-slim AS builder
 
 # Native build tools (sharp, onnxruntime-node, better-sqlite3 may need to compile)
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -20,7 +20,7 @@ COPY . .
 RUN NITRO_PRESET=node-server pnpm exec nuxt build
 
 # Stage 2: Production image
-FROM node:22-slim AS runner
+FROM node:26-slim AS runner
 
 # curl for docker-compose healthchecks, ca-certificates for outbound HTTPS
 RUN apt-get update && apt-get install -y --no-install-recommends \
